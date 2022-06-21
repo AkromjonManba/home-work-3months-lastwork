@@ -1,0 +1,19 @@
+.box {
+    margin: 20px 0;
+    padding: 20px 10px;
+    width: 100%;
+    background-color: orange;
+    list-style-type: none;
+    border-radius: 2px;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+    border-bottom: 2px solid #fff;  
+}
+
+.items {
+    padding: 10px 0px;
+    border-radius: 2px;
+    border-bottom: 2px solid #fff;  
+    border-top: 2px solid #fff;  
+}
