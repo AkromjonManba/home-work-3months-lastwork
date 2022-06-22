@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-    lang: "uz-UZ"
   // elForm,elInput,elBtn,elBookList;
   let elForm = document.querySelector("#book-form");
   let elInput = document.querySelector(".js-input");
@@ -8,10 +7,22 @@ window.addEventListener("DOMContentLoaded", () => {
   let elBookList = document.querySelector("#book-list");
   let elRecorderSpan = document.querySelector('.recorder');
   let todos = [];
+
+  let recorder = new webkitSpeechRecognition();
+  recorder.lang = "uz-UZ"
+  elRecorder.addEventListener("click", function() {
+    recorder.start();
+  })
+
   elForm.addEventListener("submit", (evt) => {
     evt.preventDefault();
     let elInputVal = elInput.value;
+    elInput.value = ""
     elBookList.innerHTML = "";
+
+    recorder.onresult = function (evt) {
+      console.log(evt);
+    }
 
     todos.push({
       id: todos.length + 1,
@@ -25,9 +36,8 @@ window.addEventListener("DOMContentLoaded", () => {
       newItem.setAttribute('class','items')
     }
     elBookList.setAttribute("class", "box");
-
-
 });
+
 });
 
 
